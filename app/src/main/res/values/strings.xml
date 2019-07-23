@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright 2019 Aletheia Ware LLC
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<resources>
+    <string name="app_name">AletheiaWareCommonAndroid</string>
+    <string name="aletheia_ware_llc_logo">Aletheia Ware LLC Logo</string>
+
+    <string name="error_report">Report</string>
+    <string name="error_terms_of_service_required">You must read, understand, and agree to the Terms of Service</string>
+    <string name="error_privacy_policy_required">You must read, understand, and agree to the Privacy Policy</string>
+    <string name="error_beta_test_agreement_required">You must read, understand, and agree to the Beta Test Agreement</string>
+
+    <string name="legalese_label">This software is made available by <a href="https://aletheiaware.com">Aletheia Ware LLC</a> under the <a href="https://aletheiaware.com/terms-of-service.html">Terms of Service"</a> and <a href="https://aletheiaware.com/privacy-policy.html">Privacy Policy</a></string>
+    <string name="legalese_terms_of_service">I understand, and agree to the Terms of Service</string>
+    <string name="legalese_privacy_policy">I understand, and agree to the Privacy Policy</string>
+    <string name="legalese_beta_label">This beta version of software is made available under the <a href="https://aletheiaware.com/beta/index.html">Beta Test Program</a></string>
+    <string name="legalese_beta_test_agreement">I understand, and agree to the Beta Test Agreement</string>
+
+    <string name="preference_about_title">About</string>
+    <string name="preference_app_version_key">app_version_preference</string>
+    <string name="preference_app_version_title">App Version</string>
+
+    <string name="preference_support_key">support_preference</string>
+    <string name="preference_support_title">Support</string>
+    <string name="preference_support_description">Contact Aletheia Ware for support or to submit feedback</string>
+
+    <string name="support_subject">Support: </string>
+    <string name="support_email">support@aletheiaware.com</string>
+
+    <string name="title_dialog_error">Error</string>
+</resources>
