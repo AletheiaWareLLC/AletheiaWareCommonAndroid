@@ -113,6 +113,19 @@ public class CommonAndroidUtils {
         }
     }
 
+    public static boolean recursiveDelete(File file) {
+        if (file.isDirectory()) {
+            for (File f : file.listFiles()) {
+                if (!recursiveDelete(f)) {
+                    return false;
+                }
+            }
+        } else {
+            return file.delete();
+        }
+        return true;
+    }
+
     public static void showErrorDialog(final Activity parent, @StyleRes int style, final int resource, final Exception exception) {
         showErrorDialog(parent, style, parent.getString(resource), exception);
     }
