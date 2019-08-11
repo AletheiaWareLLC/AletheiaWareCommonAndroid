@@ -23,6 +23,8 @@ limitations under the License.
     <string name="error_privacy_policy_required">You must read, understand, and agree to the Privacy Policy</string>
     <string name="error_beta_test_agreement_required">You must read, understand, and agree to the Beta Test Agreement</string>
 
+    <string name="legalese_action_accept">Accept</string>
+    <string name="legalese_action_reject">Reject</string>
     <string name="legalese_label">This software is made available by <a href="https://aletheiaware.com">Aletheia Ware LLC</a> under the <a href="https://aletheiaware.com/terms-of-service.html">Terms of Service"</a> and <a href="https://aletheiaware.com/privacy-policy.html">Privacy Policy</a></string>
     <string name="legalese_terms_of_service">I understand, and agree to the Terms of Service</string>
     <string name="legalese_privacy_policy">I understand, and agree to the Privacy Policy</string>
@@ -30,15 +32,23 @@ limitations under the License.
     <string name="legalese_beta_test_agreement">I understand, and agree to the Beta Test Agreement</string>
 
     <string name="preference_about_title">About</string>
-    <string name="preference_app_version_key">app_version_preference</string>
-    <string name="preference_app_version_title">App Version</string>
+
+    <string name="preference_legalese_accepted">legalese_accepted_preference</string>
+
+    <string name="preference_more_key">more_preference</string>
+    <string name="preference_more_title">More</string>
+    <string name="preference_more_description">Discover more products and services from Aletheia Ware</string>
 
     <string name="preference_support_key">support_preference</string>
     <string name="preference_support_title">Support</string>
     <string name="preference_support_description">Contact Aletheia Ware for support or to submit feedback</string>
+    <string name="preference_support_subject">Support: </string>
+    <string name="preference_support_email">support@aletheiaware.com</string>
 
-    <string name="support_subject">Support: </string>
-    <string name="support_email">support@aletheiaware.com</string>
+    <string name="preference_tutorial_completed">tutorial_completed_preference</string>
+
+    <string name="preference_version_key">version_preference</string>
+    <string name="preference_version_title">Version</string>
 
     <string name="title_dialog_error">Error</string>
 </resources>

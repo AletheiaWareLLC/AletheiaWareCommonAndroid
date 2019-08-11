@@ -29,18 +29,25 @@ limitations under the License.
     <public name="error_terms_of_service_required" type="string"/>
     <public name="error_privacy_policy_required" type="string"/>
     <public name="error_beta_test_agreement_required" type="string"/>
+    <public name="legalese_action_accept" type="string"/>
+    <public name="legalese_action_reject" type="string"/>
     <public name="legalese_label" type="string"/>
     <public name="legalese_terms_of_service" type="string"/>
     <public name="legalese_privacy_policy" type="string"/>
     <public name="legalese_beta_label" type="string"/>
     <public name="legalese_beta_test_agreement" type="string"/>
     <public name="preference_about_title" type="string"/>
-    <public name="preference_app_version_key" type="string"/>
-    <public name="preference_app_version_title" type="string"/>
+    <public name="preference_legalese_accepted" type="string"/>
+    <public name="preference_more_key" type="string"/>
+    <public name="preference_more_title" type="string"/>
+    <public name="preference_more_description" type="string"/>
     <public name="preference_support_key" type="string"/>
     <public name="preference_support_title" type="string"/>
     <public name="preference_support_description" type="string"/>
-    <public name="support_subject" type="string"/>
-    <public name="support_email" type="string"/>
+    <public name="preference_version_key" type="string"/>
+    <public name="preference_version_title" type="string"/>
+    <public name="preference_support_subject" type="string"/>
+    <public name="preference_support_email" type="string"/>
+    <public name="preference_tutorial_completed" type="string"/>
     <public name="title_dialog_error" type="string"/>
 </resources>

@@ -36,6 +36,7 @@ import android.support.annotation.StyleRes;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -70,12 +71,16 @@ public class CommonAndroidUtils {
         return PreferenceManager.getDefaultSharedPreferences(context).getStringSet(key, defaultValues);
     }
 
-    public static void captureScreenshot(final Activity parent, final String name) {
+    public static void captureScreenshot(Activity parent, final String name) {
+        captureScreenshot(parent, parent.getWindow(), name);
+    }
+
+    public static void captureScreenshot(Activity parent, final Window window, final String name) {
         final CountDownLatch latch = new CountDownLatch(1);
         parent.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                View view = parent.getWindow().getDecorView().getRootView();
+                View view = window.getDecorView().getRootView();
                 view.setDrawingCacheEnabled(true);
                 view.buildDrawingCache(true);
                 Bitmap cache = view.getDrawingCache();
@@ -114,14 +119,16 @@ public class CommonAndroidUtils {
     }
 
     public static boolean recursiveDelete(File file) {
-        if (file.isDirectory()) {
-            for (File f : file.listFiles()) {
-                if (!recursiveDelete(f)) {
-                    return false;
+        if (file.exists()) {
+            if (file.isDirectory()) {
+                for (File f : file.listFiles()) {
+                    if (!recursiveDelete(f)) {
+                        return false;
+                    }
                 }
+            } else {
+                return file.delete();
             }
-        } else {
-            return file.delete();
         }
         return true;
     }
@@ -141,9 +148,11 @@ public class CommonAndroidUtils {
                             public void onClick(DialogInterface dialog, int id) {
                                 StringBuilder sb = new StringBuilder();
                                 sb.append("======== Exception ========");
+                                sb.append('\n');
                                 StringWriter sw = new StringWriter();
                                 exception.printStackTrace(new PrintWriter(sw));
                                 sb.append(sw.toString());
+                                sb.append('\n');
                                 support(parent, sb);
                             }
                         })
@@ -219,8 +228,8 @@ public class CommonAndroidUtils {
         Log.d(CommonUtils.TAG, content.toString());
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));
-        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{parent.getString(R.string.support_email)});
-        intent.putExtra(Intent.EXTRA_SUBJECT, parent.getString(R.string.support_subject) + parent.getString(R.string.app_name));
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{parent.getString(R.string.preference_support_email)});
+        intent.putExtra(Intent.EXTRA_SUBJECT, parent.getString(R.string.preference_support_subject) + parent.getString(R.string.app_name));
         intent.putExtra(Intent.EXTRA_TEXT, content.toString());
         parent.startActivity(intent);
     }
