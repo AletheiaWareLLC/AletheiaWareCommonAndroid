@@ -18,6 +18,8 @@ limitations under the License.
     <string name="app_name">AletheiaWareCommonAndroid</string>
     <string name="aletheia_ware_llc_logo">Aletheia Ware LLC Logo</string>
 
+    <string name="copy_to_clipboard_toast_text">%s copied to clipboard</string>
+
     <string name="error_report">Report</string>
     <string name="error_terms_of_service_required">You must read, understand, and agree to the Terms of Service</string>
     <string name="error_privacy_policy_required">You must read, understand, and agree to the Privacy Policy</string>
