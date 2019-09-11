@@ -22,6 +22,7 @@ limitations under the License.
     <public name="text_secondary_size" type="dimen"/>
 
     <public name="aletheia_ware_llc_logo" type="drawable"/>
+    <public name="aletheia_ware_llc_logo_small" type="drawable"/>
 
     <public name="app_name" type="string"/>
     <public name="aletheia_ware_llc_logo" type="string"/>
