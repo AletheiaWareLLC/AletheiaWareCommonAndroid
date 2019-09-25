@@ -34,6 +34,7 @@ limitations under the License.
 
     <public name="aletheia_ware_llc_logo" type="drawable"/>
     <public name="aletheia_ware_llc_logo_small" type="drawable"/>
+    <public name="close" type="drawable"/>
     <public name="delete" type="drawable"/>
     <public name="fingerprint" type="drawable"/>
     <public name="info" type="drawable"/>
