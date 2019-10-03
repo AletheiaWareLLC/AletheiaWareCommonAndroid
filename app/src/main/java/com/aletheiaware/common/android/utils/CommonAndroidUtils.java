@@ -16,10 +16,6 @@
 
 package com.aletheiaware.common.android.utils;
 
-import com.aletheiaware.common.android.BuildConfig;
-import com.aletheiaware.common.android.R;
-import com.aletheiaware.common.utils.CommonUtils;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -32,15 +28,20 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.preference.PreferenceManager;
-import androidx.annotation.StyleRes;
-import androidx.appcompat.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 
+import com.aletheiaware.common.android.BuildConfig;
+import com.aletheiaware.common.android.R;
+import com.aletheiaware.common.utils.CommonUtils;
+
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Arrays;
@@ -48,6 +49,9 @@ import java.util.Date;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
+
+import androidx.annotation.StyleRes;
+import androidx.appcompat.app.AlertDialog;
 
 public class CommonAndroidUtils {
 
@@ -116,6 +120,35 @@ public class CommonAndroidUtils {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static boolean recursiveCopy(File source, File target) {
+        if (source.exists()) {
+            if (source.isDirectory()) {
+                if (!target.exists() && !target.mkdirs()) {
+                    return false;
+                }
+                for (String file : source.list()) {
+                    recursiveCopy(new File(source, file), new File(target, file));
+                }
+            } else {
+                File parent = target.getParentFile();
+                if (parent != null && !parent.exists() && !parent.mkdirs()) {
+                    return false;
+                }
+                byte[] buffer = new byte[1024];
+                int length;
+                try (InputStream in = new FileInputStream(source); OutputStream out = new FileOutputStream(target)) {
+                    while ((length = in.read(buffer)) > 0) {
+                        out.write(buffer, 0, length);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     public static boolean recursiveDelete(File file) {
