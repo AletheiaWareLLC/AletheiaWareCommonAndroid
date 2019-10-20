@@ -31,6 +31,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.TextView;
 
 import com.aletheiaware.common.android.BuildConfig;
 import com.aletheiaware.common.android.R;
@@ -50,7 +51,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 
+import androidx.annotation.StringRes;
 import androidx.annotation.StyleRes;
+import androidx.annotation.WorkerThread;
 import androidx.appcompat.app.AlertDialog;
 
 public class CommonAndroidUtils {
@@ -164,6 +167,23 @@ public class CommonAndroidUtils {
             }
         }
         return true;
+    }
+
+    @WorkerThread
+    public static void setStatus(final Activity activity, final TextView textView, final @StringRes int status) {
+        setStatus(activity, textView, activity.getString(status));
+    }
+
+    @WorkerThread
+    public static void setStatus(final Activity activity, final TextView textView, final String status) {
+        activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (textView != null) {
+                    textView.setText(status);
+                }
+            }
+        });
     }
 
     public static void showErrorDialog(final Activity parent, @StyleRes int style, final int resource, final Exception exception) {
