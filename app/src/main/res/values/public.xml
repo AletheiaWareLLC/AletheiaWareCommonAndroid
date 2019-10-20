@@ -32,6 +32,7 @@ limitations under the License.
     <public name="text_primary_size" type="dimen"/>
     <public name="text_secondary_size" type="dimen"/>
 
+    <public name="add" type="drawable"/>
     <public name="aletheia_ware_llc_logo" type="drawable"/>
     <public name="aletheia_ware_llc_logo_small" type="drawable"/>
     <public name="close" type="drawable"/>
@@ -44,6 +45,7 @@ limitations under the License.
     <public name="refresh" type="drawable"/>
     <public name="security" type="drawable"/>
     <public name="settings" type="drawable"/>
+    <public name="sort" type="drawable"/>
     <public name="support" type="drawable"/>
 
     <public name="app_name" type="string"/>
