@@ -213,7 +213,7 @@ public class CommonAndroidUtils {
             e.printStackTrace();
         }
         content.append("======== Library Info ========\n");
-        content.append("Library ID: ").append(BuildConfig.APPLICATION_ID).append("\n");
+        content.append("Library ID: ").append(BuildConfig.LIBRARY_PACKAGE_NAME).append("\n");
         content.append("Variant: ").append(BuildConfig.BUILD_TYPE).append("\n");
         content.append("Version: ").append(BuildConfig.VERSION_NAME).append("\n");
         content.append("======== Device Info ========\n");
