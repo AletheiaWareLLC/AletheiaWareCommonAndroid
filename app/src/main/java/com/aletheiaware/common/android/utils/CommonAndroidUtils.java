@@ -125,50 +125,6 @@ public class CommonAndroidUtils {
         }
     }
 
-    public static boolean recursiveCopy(File source, File target) {
-        if (source.exists()) {
-            if (source.isDirectory()) {
-                if (!target.exists() && !target.mkdirs()) {
-                    return false;
-                }
-                for (String file : source.list()) {
-                    recursiveCopy(new File(source, file), new File(target, file));
-                }
-            } else {
-                File parent = target.getParentFile();
-                if (parent != null && !parent.exists() && !parent.mkdirs()) {
-                    return false;
-                }
-                byte[] buffer = new byte[1024];
-                int length;
-                try (InputStream in = new FileInputStream(source); OutputStream out = new FileOutputStream(target)) {
-                    while ((length = in.read(buffer)) > 0) {
-                        out.write(buffer, 0, length);
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
-    public static boolean recursiveDelete(File file) {
-        if (file.exists()) {
-            if (file.isDirectory()) {
-                for (File f : file.listFiles()) {
-                    if (!recursiveDelete(f)) {
-                        return false;
-                    }
-                }
-            } else {
-                return file.delete();
-            }
-        }
-        return true;
-    }
-
     @WorkerThread
     public static void setStatus(final Activity activity, final TextView textView, final @StringRes int status) {
         setStatus(activity, textView, activity.getString(status));
